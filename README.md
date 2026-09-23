@@ -46,6 +46,33 @@ ThingsBoard Cloud is used as the IoT platform for:
 - Remote RPC-based actuator control
 
 ---
+## Dependencies & Library Installation
+
+To ensure the code compiles successfully and to prevent breaking changes from future library updates, all required third-party libraries have been bundled in this repository. 
+
+**Included Libraries:**
+* `PubSubClient` (MQTT Communication)
+* `INA226_WE` (Power monitoring)
+* `Adafruit_SHT31` (Cooling tower temperature/humidity)
+* `OneWire` & `DallasTemperature` (Switchyard temperature sensor)
+* `ESP32Servo` (Hardware PWM servo control)
+* `ArduinoJson` (JSON serialization for ThingsBoard telemetry/RPC)
+
+*Note: Core ESP32 libraries (WiFi, Wire, Preferences, Update, etc.) are built into the ESP32 board package and are not included in this zip.*
+
+### How to Install the Dependencies
+
+Since this zip contains multiple libraries, do not use the Arduino IDE's "Add .ZIP Library" feature. Instead, extract them manually:
+
+1. Download `FactoryModel_Dependencies.zip` from this repository.
+2. Extract the contents of the zip file.
+3. Copy all the extracted individual library folders directly into your local Arduino `libraries` directory:
+   * **Windows:** `C:\Users\<YourUsername>\Documents\Arduino\libraries\`
+   * **Mac:** `~/Documents/Arduino/libraries/`
+   * **Linux:** `~/Arduino/libraries/`
+4. Restart your Arduino IDE. 
+5. Select your ESP32 board and compile the code.
+---
 
 # System Architecture
 
